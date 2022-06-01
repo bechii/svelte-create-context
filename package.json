@@ -1,0 +1,41 @@
+{
+  "name": "svelte-create-context",
+  "version": "0.0.1",
+  "description": "A keyless approach to the Svelte context API",
+  "author": "Simon Bechmann",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bechii/svelte-create-context.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bechii/svelte-create-context/issues"
+  },
+  "homepage": "https://github.com/bechii/svelte-create-context#readme",
+  "keywords": [
+    "svelte",
+    "context"
+  ],
+  "files": [
+    "dist"
+  ],
+  "main": "dist/main.js",
+  "types": "dist/types/main.d.ts",
+  "scripts": {
+    "build": "rollup --config",
+    "publish": "npm publish"
+  },
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^8.3.2",
+    "@typescript-eslint/eslint-plugin": "^5.24.0",
+    "@typescript-eslint/parser": "^5.24.0",
+    "eslint": "^8.15.0",
+    "rollup": "^2.73.0",
+    "tslib": "^2.4.0",
+    "typescript": "^4.6.4"
+  },
+  "dependencies": {
+    "nanoid": "^3.3.4",
+    "svelte": "^3.30.1"
+  }
+}
