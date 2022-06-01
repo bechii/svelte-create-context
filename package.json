@@ -1,6 +1,6 @@
 {
   "name": "svelte-create-context",
-  "version": "0.0.1",
+  "version": "0.0.6",
   "description": "A keyless approach to the Svelte context API",
   "author": "Simon Bechmann",
   "license": "MIT",
@@ -19,7 +19,9 @@
   "files": [
     "dist"
   ],
-  "main": "dist/main.js",
+  "type": "module",
+  "main": "dist/main.cjs",
+  "module": "dist/main.js",
   "types": "dist/types/main.d.ts",
   "scripts": {
     "build": "rollup --config",
