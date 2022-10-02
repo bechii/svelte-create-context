@@ -24,7 +24,10 @@
   "module": "dist/main.js",
   "types": "dist/types/main.d.ts",
   "scripts": {
-    "build": "rollup --config"
+    "lint": "eslint .",
+    "bundle": "rollup --config",
+    "build": "npm run lint && npm run bundle",
+    "prepublishOnly": "npm run build"
   },
   "devDependencies": {
     "@rollup/plugin-typescript": "^8.3.2",
@@ -32,6 +35,7 @@
     "@typescript-eslint/parser": "^5.24.0",
     "eslint": "^8.15.0",
     "rollup": "^2.73.0",
+    "rollup-plugin-delete": "^2.0.0",
     "svelte": "^3.30.1",
     "tslib": "^2.4.0",
     "typescript": "^4.6.4"
