@@ -16,9 +16,9 @@ export function createContext<T>(): Context<T> {
     setContext(key, value);
   }
 
-	function get(): T {
-		return getContext(key);
-	}
+  function get(): T {
+    return getContext(key);
+  }
 
-	return { setup, get };
+  return { setup, get };
 }
