@@ -1,6 +1,6 @@
 {
   "name": "svelte-create-context",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A keyless and typesafe approach to the Svelte context API",
   "author": "Simon Bechmann",
   "license": "MIT",
@@ -44,6 +44,6 @@
     "nanoid": "^3.3.4"
   },
   "peerDependencies": {
-    "svelte": "^3.30.1"
+    "svelte": "3 - 4"
   }
 }
