@@ -1,6 +1,6 @@
 {
   "name": "svelte-create-context",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "A keyless and typesafe approach to the Svelte context API",
   "author": "Simon Bechmann",
   "license": "MIT",
@@ -20,9 +20,17 @@
     "dist"
   ],
   "type": "module",
-  "main": "dist/main.cjs",
-  "module": "dist/main.js",
-  "types": "dist/types/main.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
   "scripts": {
     "lint": "eslint .",
     "bundle": "rollup --config",
@@ -30,20 +38,21 @@
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
-    "@rollup/plugin-typescript": "^8.3.2",
+    "@rollup/plugin-typescript": "^12.1.2",
     "@typescript-eslint/eslint-plugin": "^5.24.0",
     "@typescript-eslint/parser": "^5.24.0",
     "eslint": "^8.15.0",
-    "rollup": "^2.73.0",
-    "rollup-plugin-delete": "^2.0.0",
+    "rollup": "^4.35.0",
+    "rollup-plugin-delete": "^3.0.1",
+    "rollup-plugin-dts": "^6.1.1",
     "svelte": "^3.30.1",
     "tslib": "^2.4.0",
     "typescript": "^4.6.4"
   },
   "dependencies": {
-    "nanoid": "^3.3.4"
+    "nanoid": "^5.1.3"
   },
   "peerDependencies": {
-    "svelte": "3 - 4"
+    "svelte": ">=3.0.0"
   }
 }

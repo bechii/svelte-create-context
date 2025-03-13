@@ -2,16 +2,16 @@ import { getContext, hasContext, setContext } from 'svelte';
 import { nanoid } from 'nanoid';
 
 export interface Context<T> {
-  setup: (value: T) => void;
+  set: (value: T) => void;
   get: () => T;
 }
 
 export function createContext<T>(): Context<T> {
   const key = nanoid();
 
-  function setup(value: T): void {
+  function set(value: T): void {
     if (hasContext(key)) {
-      return console.error('Context is already setup');
+      return console.error('Context is already set');
     }
     setContext(key, value);
   }
@@ -20,5 +20,5 @@ export function createContext<T>(): Context<T> {
     return getContext(key);
   }
 
-  return { setup, get };
+  return { set, get };
 }

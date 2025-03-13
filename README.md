@@ -16,8 +16,8 @@ npm i svelte-create-context
 import { createContext } from 'svelte-create-context';
 
 export const {
-  setup: setupCurrentUser,
-  get: getCurrentUser
+  set: setUserContext,
+  get: getUserContext
 } = createContext<User>();
 ```
 
@@ -25,9 +25,9 @@ export const {
 // parent component
 
 <script lang="ts">
-  import { setupCurrentUser } from './context';
+  import { setUserContext } from './context';
 
-  setupCurrentUser(new User());
+  setUserContext(new User());
 </script>
 ```
 
@@ -35,16 +35,16 @@ export const {
 // child component
 
 <script lang="ts">
-  import { getCurrentUser } from './context';
+  import { getUserContext } from 'path-to-parent-component/context';
 
-  const currentUser = getCurrentUser();
+  const currentUser = getUserContext();
 </script>
 ```
 
 ## 🔨 API
 ```
 interface Context<T> {
-  setup: (value: T) => void;
+  set: (value: T) => void;
   get: () => T;
 }
 
